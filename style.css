@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #f8fafc;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  margin: 0 0 10px;
+  font-size: 2.2rem;
+}
+
+.header p {
+  margin: 0;
+  color: #cbd5e1;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.upload-card input[type="file"] {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #111827;
+}
+
+.preview-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 420px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+#previewImage {
+  max-width: 100%;
+  max-height: 520px;
+  display: none;
+  border-radius: 12px;
+}
+
+#hiddenCanvas {
+  display: none;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.metric {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 14px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.metric-label {
+  display: block;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 8px;
+}
+
+.metric-value {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.details p {
+  margin: 8px 0;
+}
+
+.reasons-block ul {
+  padding-right: 18px;
+}
+
+.reasons-block li {
+  margin-bottom: 8px;
+}
+
+.ocr-block textarea {
+  width: 100%;
+  min-height: 180px;
+  resize: vertical;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 0.95rem;
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.92;
+}
+
+@media (max-width: 900px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+}
