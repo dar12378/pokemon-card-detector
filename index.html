@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokemon Card Checker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>בודק קלפי פוקימון</h1>
+      <p>בדיקה ראשונית לקלף אמיתי / מזויף ולזיהוי סט</p>
+    </header>
+
+    <main class="main-grid">
+      <section class="card upload-card">
+        <h2>העלאת תמונה</h2>
+        <input type="file" id="imageInput" accept="image/*" />
+        <div class="preview-wrapper">
+          <img id="previewImage" alt="תצוגת קלף" />
+          <canvas id="hiddenCanvas"></canvas>
+        </div>
+      </section>
+
+      <section class="card result-card">
+        <h2>תוצאות</h2>
+
+        <div class="metrics">
+          <div class="metric">
+            <span class="metric-label">ציון אמינות</span>
+            <span class="metric-value" id="scoreValue">-</span>
+          </div>
+          <div class="metric">
+            <span class="metric-label">פסק דין</span>
+            <span class="metric-value" id="verdictValue">-</span>
+          </div>
+          <div class="metric">
+            <span class="metric-label">מספר קלף</span>
+            <span class="metric-value" id="cardNumberValue">-</span>
+          </div>
+          <div class="metric">
+            <span class="metric-label">סט משוער</span>
+            <span class="metric-value" id="setValue">-</span>
+          </div>
+        </div>
+
+        <div class="details">
+          <p><strong>Blur Score:</strong> <span id="blurValue">-</span></p>
+          <p><strong>Aspect Ratio:</strong> <span id="ratioValue">-</span></p>
+        </div>
+
+        <div class="reasons-block">
+          <h3>סיבות</h3>
+          <ul id="reasonsList"></ul>
+        </div>
+
+        <div class="ocr-block">
+          <h3>טקסט שזוהה</h3>
+          <textarea id="ocrText" readonly></textarea>
+        </div>
+
+        <button id="analyzeBtn">בדוק קלף</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
